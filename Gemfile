@@ -16,6 +16,7 @@ group :assets do
 end
 
 gem 'compass', :require => false
+gem 'haml'
 gem 'jquery-rails'
 gem 'omniauth'
 gem 'nested_form', :git => "https://github.com/ryanb/nested_form.git"
