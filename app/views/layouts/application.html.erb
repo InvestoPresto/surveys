@@ -7,18 +7,37 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% if current_user %>
-  Welcome <%= current_user.name %>!
-  <%= link_to "Sign Out", signout_path %>
-<% else %>
-  <%= link_to "Sign in with Twitter", "/auth/twitter" %>
-<% end %>
+<header>
+  <div class="container">
+    <hgroup class="user">
+      <% if current_user %>
+        Welcome <%= current_user.name %>!
+        <%= link_to "Sign Out", signout_path %>
+      <% else %>
+        <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+      <% end %>
+    </hgroup>
+    <hgroup class="logo">
+      <%= image_tag "logo.png", :alt =>"Investopresto Surveys" %>
+      <span id="surveys" class="tag">Surveys</span>
+    </hgroup>
+  </div>
+</header>
+<div class="clear"></div>
 
-<%- flash.each do |name, msg| %>
-  <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
-<%- end %>
+<div id="wrapper" class="container">
+  <div id="main">
+    <%- flash.each do |name, msg| %>
+      <%= content_tag :div, msg, :id => "flash_#{name}", :class => name if msg.is_a?(String) %>
+    <%- end %>
 
-<%= yield %>
-
+    <%= yield %>
+  </div>
+</div>
+<footer>
+  <div class="container">
+    <p>All your bases are belong to us!! &copy; 2011 Investopresto</p>
+  </div>
+</footer>
 </body>
 </html>

@@ -15,6 +15,7 @@ group :assets do
   gem 'uglifier'
 end
 
+gem 'compass', :require => false
 gem 'jquery-rails'
 gem 'omniauth'
 gem 'nested_form', :git => "https://github.com/ryanb/nested_form.git"

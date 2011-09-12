@@ -1,0 +1,47 @@
+// This import applies a global reset to any page that imports this stylesheet.
+@import "blueprint/reset";
+
+// To configure blueprint, edit the partials/base.sass file.
+@import "partials/base";
+
+// Import all the default blueprint modules so that we can access their mixins.
+@import "blueprint";
+@import "blueprint/buttons";
+
+// Combine the partials into a single screen stylesheet.
+@import "partials/page";
+@import "partials/form";
+@import "partials/two_col";
+@import "partials/buttons";
+
+@import "compass/typography/lists/horizontal-list";
+nav>ul {
+  @include horizontal-list;
+}
+hgroup.user {
+  float: right;
+  clear: left;
+}
+
+.actions {
+  @include horizontal-list-container;
+  > .button_to {
+    @include horizontal-list-item;
+  }
+}
+
+.page_title form.button_to {
+  @include float-right;
+}
+
+
+hgroup.logo .tag{
+    color: tan;
+    font-weight: bold;
+    text-shadow: 0 0 5px yellow;
+    text-transform: capitalize;
+    vertical-align: top;
+    position: relative;
+    left: -1em;
+    top: 0.5em;
+}

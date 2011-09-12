@@ -1,9 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @survey.name %>
-</p>
+<h1><%= @survey.name %></h1>
 
 <%= form_tag answer_survey_path(@survey) do %>
   <ol class="questions">
@@ -26,6 +23,3 @@
     <%= submit_tag "Submit" %>
   </div>
 <% end %>
-
-<%= link_to 'Edit', edit_survey_path(@survey) %> |
-<%= link_to 'Back', surveys_path %>
