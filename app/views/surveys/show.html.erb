@@ -5,18 +5,27 @@
   <%= @survey.name %>
 </p>
 
-<ol class="questions">
-  <%- for question in @survey.questions %>
-    <li>
-      <%= question.content %>
-      <ol class="choices">
-        <%- for choice in question.choices %>
-          <li><%= choice.content %></li>
+<%= form_tag answer_survey_path(@survey) do %>
+  <ol class="questions">
+    <%- for question in @survey.questions %>
+      <li>
+        <%= simple_format question.content %>
+        <%- if question.choices.count > 0 %>
+          <ol class="choices">
+            <%- for choice in question.choices %>
+              <li class="choice"><%= radio_button_tag "answers[#{question.id}][content]", choice.content %> <%=choice.content%></li>
+            <%- end %>
+          </ol>
+        <%- else %>
+          <%= text_area_tag "answers[#{question.id}][content]" %>
         <%- end %>
-      </ol>
-    </li>
-  <% end %>
-</ol>
+      </li>
+    <% end %>
+  </ol>
+  <div class="actions">
+    <%= submit_tag "Submit" %>
+  </div>
+<% end %>
 
 <%= link_to 'Edit', edit_survey_path(@survey) %> |
 <%= link_to 'Back', surveys_path %>

@@ -1,10 +1,9 @@
 Surveys::Application.routes.draw do
   resources :answers
 
-  namespace :admin do
-    resources :surveys
+  resources :surveys do
+    post :answer, :on => :member
   end
-  resources :surveys
 
   match "/auth/:provider/callback" => "sessions#create"
   match "/signout" => "sessions#destroy", :as => :signout

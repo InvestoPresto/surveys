@@ -1,6 +1,8 @@
 class SurveysController < ApplicationController
-  # GET /admin/surveys
-  # GET /admin/surveys.json
+  before_filter :authorize, :except => :index
+  before_filter :authorize_admin, :except => [:index, :show, :answer]
+  # GET /surveys
+  # GET /surveys.json
   def index
     @surveys = Survey.all
 
@@ -10,8 +12,8 @@ class SurveysController < ApplicationController
     end
   end
 
-  # GET /admin/surveys/1
-  # GET /admin/surveys/1.json
+  # GET /surveys/1
+  # GET /surveys/1.json
   def show
     @survey = Survey.find(params[:id])
 
@@ -21,8 +23,8 @@ class SurveysController < ApplicationController
     end
   end
 
-  # GET /admin/surveys/new
-  # GET /admin/surveys/new.json
+  # GET /surveys/new
+  # GET /surveys/new.json
   def new
     @survey = Survey.new
 
@@ -32,13 +34,13 @@ class SurveysController < ApplicationController
     end
   end
 
-  # GET /admin/surveys/1/edit
+  # GET /surveys/1/edit
   def edit
     @survey = Survey.find(params[:id])
   end
 
-  # POST /admin/surveys
-  # POST /admin/surveys.json
+  # POST /surveys
+  # POST /surveys.json
   def create
     @survey = Survey.new(params[:survey])
 
@@ -53,8 +55,8 @@ class SurveysController < ApplicationController
     end
   end
 
-  # PUT /admin/surveys/1
-  # PUT /admin/surveys/1.json
+  # PUT /surveys/1
+  # PUT /surveys/1.json
   def update
     @survey = Survey.find(params[:id])
 
@@ -69,8 +71,8 @@ class SurveysController < ApplicationController
     end
   end
 
-  # DELETE /admin/surveys/1
-  # DELETE /admin/surveys/1.json
+  # DELETE /surveys/1
+  # DELETE /surveys/1.json
   def destroy
     @survey = Survey.find(params[:id])
     @survey.destroy
@@ -79,5 +81,16 @@ class SurveysController < ApplicationController
       format.html { redirect_to surveys_url }
       format.json { head :ok }
     end
+  end
+
+  # POST /surveys/1/answer
+  # POST /surveys/1/answer.json
+  def answer
+    params[:answers].each do |question_id, value|
+      answer = Answer.find_or_initialize_by_question_id_and_user_id(question_id, current_user.id)
+      answer.content = value[:content]
+      answer.save
+    end
+    redirect_to root_url, :notice => "survey submitted_successfully"
   end
 end
