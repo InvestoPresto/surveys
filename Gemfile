@@ -18,6 +18,7 @@ end
 
 gem 'jquery-rails'
 gem 'omniauth'
+gem 'nested_form', :git => "https://github.com/ryanb/nested_form.git"
 
 # Use unicorn as the web server
 # gem 'unicorn'

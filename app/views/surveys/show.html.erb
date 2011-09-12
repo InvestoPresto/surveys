@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @survey.name %>
+</p>
+
+<ol class="questions">
+  <%- for question in @survey.questions %>
+    <li>
+      <%= question.content %>
+      <ol class="choices">
+        <%- for choice in question.choices %>
+          <li><%= choice.content %></li>
+        <%- end %>
+      </ol>
+    </li>
+  <% end %>
+</ol>
+
+<%= link_to 'Edit', edit_survey_path(@survey) %> |
+<%= link_to 'Back', surveys_path %>

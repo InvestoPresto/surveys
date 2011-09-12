@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  survey: 
+  content: MyText
+  type: 
+
+two:
+  survey: 
+  content: MyText
+  type: 
