@@ -10,11 +10,14 @@
         <%- if question.choices.count > 0 %>
           <ol class="choices">
             <%- for choice in question.choices %>
-              <li class="choice"><%= radio_button_tag "answers[#{question.id}][content]", choice.content %> <%=choice.content%></li>
+              <li class="choice">
+                <%= radio_button_tag "answers[#{question.id}][content]", choice.content, :checked => (question.answers.find_by_user_id(current_user.id).try(:content) == choice.content) %>
+                <%= label_tag "answers[#{question.id}][content]", choice.content %>
+              </li>
             <%- end %>
           </ol>
         <%- else %>
-          <%= text_area_tag "answers[#{question.id}][content]" %>
+          <%= text_area_tag "answers[#{question.id}][content]", question.answers.find_by_user_id(current_user.id).try(:content) %>
         <%- end %>
       </li>
     <% end %>

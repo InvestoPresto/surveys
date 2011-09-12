@@ -1,5 +1,5 @@
 class SurveysController < ApplicationController
-  before_filter :authorize, :except => :index if Rails.env.production?
+  before_filter :authorize, :except => :index
   before_filter :authorize_admin, :except => [:index, :show, :answer]
   # GET /surveys
   # GET /surveys.json
