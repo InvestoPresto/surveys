@@ -21,6 +21,10 @@ body {
     text-decoration: none;
   }
 
+  ol, ul {
+    padding-left: 2em;
+  }
+
   .container {
     @include container;
   }

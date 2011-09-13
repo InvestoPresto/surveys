@@ -4,7 +4,7 @@
 
 <%= form_tag answer_survey_path(@survey) do %>
   <ol class="questions">
-    <%- for question in @survey.questions.order(:id) %>
+    <%- for question in @survey.questions %>
       <li>
         <%= simple_format question.content %>
         <%- if question.choices.count > 0 %>
