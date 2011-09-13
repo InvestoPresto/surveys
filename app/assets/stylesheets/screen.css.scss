@@ -34,7 +34,6 @@ hgroup.user {
   @include float-right;
 }
 
-
 hgroup.logo .tag{
     color: tan;
     font-weight: bold;
@@ -49,4 +48,8 @@ hgroup.logo .tag{
 .questions b
 {
   color: #F45363;
+}
+ol.choices
+{
+  list-style: lower-alpha;
 }
