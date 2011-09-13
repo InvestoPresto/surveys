@@ -14,7 +14,19 @@
         Welcome <%= current_user.name %>!
         <%= link_to "Sign Out", signout_path %>
       <% else %>
-        <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+        Sign in with: 
+        <%= link_to "/auth/facebook" do %>
+          <%= image_tag "https://github.com/intridea/authbuttons/raw/master/png/facebook_32.png", :alt => "Facebook" %>
+        <%- end %>
+        <%= link_to "/auth/open_id?openid_url=google.com" do %>
+          <%= image_tag "https://github.com/intridea/authbuttons/raw/master/png/google_32.png", :alt => "Google" %>
+        <%- end %>
+        <%= link_to "/auth/twitter" do %>
+          <%= image_tag "https://github.com/intridea/authbuttons/raw/master/png/twitter_32.png", :alt => "Twitter" %>
+        <%- end %>
+        <%= link_to "/auth/open_id?openid_url=yahoo.com" do %>
+          <%= image_tag "https://github.com/intridea/authbuttons/raw/master/png/yahoo_32.png", :alt => "Yahoo" %>
+        <%- end %>
       <% end %>
     </hgroup>
     <hgroup class="logo">
