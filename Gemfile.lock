@@ -76,6 +76,7 @@ GEM
     multi_xml (0.2.2)
     multipart-post (1.1.3)
     net-ldap (0.2.2)
+    newrelic_rpm (3.1.2)
     nokogiri (1.4.7)
     oa-basic (0.2.6)
       oa-core (= 0.2.6)
@@ -183,6 +184,7 @@ DEPENDENCIES
   haml
   jquery-rails
   nested_form!
+  newrelic_rpm
   omniauth
   pg
   rails (= 3.1.0)
