@@ -20,7 +20,6 @@ gem 'haml'
 gem 'jquery-rails'
 gem 'omniauth'
 gem 'nested_form', :git => "https://github.com/ryanb/nested_form.git"
-gem 'newrelic_rpm'
 gem 'thin'
 
 # Use unicorn as the web server
@@ -40,5 +39,6 @@ group :development, :test do
   gem 'sqlite3'
 end
 group :production do
+  gem 'newrelic_rpm'
   gem 'pg'
 end
