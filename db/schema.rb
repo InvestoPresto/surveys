@@ -11,50 +11,52 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110909133040) do
+ActiveRecord::Schema.define(:version => 20110920125317) do
 
   create_table "answers", :force => true do |t|
-    t.integer  "question_id"
-    t.text     "content"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer   "question_id"
+    t.text      "content"
+    t.integer   "user_id"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   add_index "answers", ["question_id"], :name => "index_answers_on_question_id"
   add_index "answers", ["user_id"], :name => "index_answers_on_user_id"
 
   create_table "choices", :force => true do |t|
-    t.integer  "question_id"
-    t.text     "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer   "question_id"
+    t.text      "content"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   add_index "choices", ["question_id"], :name => "index_choices_on_question_id"
 
   create_table "questions", :force => true do |t|
-    t.integer  "survey_id"
-    t.text     "content"
-    t.string   "type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer   "survey_id"
+    t.text      "content"
+    t.string    "type"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   add_index "questions", ["survey_id"], :name => "index_questions_on_survey_id"
 
   create_table "surveys", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "name"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.text      "description"
+    t.text      "result_html"
   end
 
   create_table "users", :force => true do |t|
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "provider"
+    t.string    "uid"
+    t.string    "name"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
 end

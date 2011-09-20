@@ -1,18 +1,5 @@
-<p>
-  <%= link_to 'Investopresto', 'http://investopresto.com', :target => :blank %> is a web based tool that aims to help small investors in India make smarter investment decisions.
-  Please help us understand our market needs by completing our short survey.
-  We will use your feedback to improve our product.
-  No personal details will be recorded.
-  Your data will not be shared/sold to anyone outside the company.
-  We also promise not to spam you.
-</p>
-<p>
-  20 lucky winners will win INOX movie tickets in the form of vouchers.
-  We expect this survey to take 2 minutes of your time.
-  You may skip questions but the more questions you answer, the greater your chances of winning.
-</p>
-<ul>
-<% @surveys.each do |survey| %>
-  <li><%= link_to survey.name, survey %></li>
-<% end %>
-</ul>
+<p> <%= link_to 'Investopresto', 'http://investopresto.com', :target => :blank %> is a suite of web based tools that aims to help small investors in India make smarter investment decisions.  Our tools include portfolio analysis tools, stock recommendations, investment articles for beginners & advanced investors. risk profiling and risk analysis tools. </p>
+
+<h5>Do you love to try out new stuff on web? Do you love exploring?</h5>
+<p> Join our pilot user program for free and get to use all our tools and services for free. Tell us what you like about our products and what you’d like to see changed. Give us useful feedback and win iPods, F1 Tickets, movie tickets, coffee vouchers, and plenty of other cool stuff. </p>
+<%= button_to "Getting Started", @surveys[0], :method => :get %>

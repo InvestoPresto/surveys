@@ -91,6 +91,6 @@ class SurveysController < ApplicationController
       answer.content = value[:content]
       answer.save
     end
-    redirect_to root_url, :notice => "Thank you for taking our survey. We will contact you if you are one of the lucky winners."
+    render :inline => Survey.find(params[:id]).result_html || "Saved your survey Successfully!", :layout => true
   end
 end

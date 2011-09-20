@@ -2,6 +2,8 @@
 
 <h1><%= @survey.name %></h1>
 
+<div><%=raw @survey.description %></div>
+
 <%= form_tag answer_survey_path(@survey) do %>
   <ol class="questions">
     <%- for question in @survey.questions %>
