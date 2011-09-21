@@ -3,6 +3,7 @@ ActiveAdmin.register Survey do
     f.inputs do
       f.input :name
       f.input :description
+      f.input :confirmation
     end
 
     f.has_many :sections do |s|

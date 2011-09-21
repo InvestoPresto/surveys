@@ -93,6 +93,6 @@ class SurveysController < ApplicationController
     end
 
     survey = Survey.find_by_id(params[:id].to_i + 1)
-    redirect_to survey ? survey_path(survey) : root_url, :notice => "Thank you! Your preference has been submitted!!"
+    redirect_to survey ? survey_path(survey) : root_url, :notice => Survey.find(params[:id]).confirmation
   end
 end
