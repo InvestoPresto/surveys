@@ -8,4 +8,10 @@ ActiveAdmin.register Answer do
     column :content
     default_actions
   end
+
+  csv do
+    column ("User") { |answer| answer.user.try(:name) }
+    column ("Question") { |answer| answer.question.content }
+    column :content
+  end
 end
