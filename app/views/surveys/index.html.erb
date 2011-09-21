@@ -1,5 +1,12 @@
 <p> <%= link_to 'Investopresto', 'http://investopresto.com', :target => :blank %> is a suite of web based tools that aims to help small investors in India make smarter investment decisions.  Our tools include portfolio analysis tools, stock recommendations, investment articles for beginners & advanced investors. risk profiling and risk analysis tools. </p>
 
-<h5>Do you love to try out new stuff on web? Do you love exploring?</h5>
-<p> Join our pilot user program for free and get to use all our tools and services for free. Tell us what you like about our products and what you’d like to see changed. Give us useful feedback and win iPods, F1 Tickets, movie tickets, coffee vouchers, and plenty of other cool stuff. </p>
-<%= button_to "Getting Started", @surveys[0], :method => :get %>
+<h5>Do you love to try out new stuff on the web? Do you love exploring?</h5>
+<p> Join our pilot user program and get to use all our tools and services for free. Tell us what you like about our products and what you’d like to see changed. Give us useful feedback and win F1 tickets, iPods, movie tickets, coffee vouchers, and plenty of other cool stuff. </p>
+
+<ol>
+  <li>Simply tell us a bit about what features you will find useful by taking our short 2 minute survey click on the link below.[Stand to win iPods and Coffee day vouchers]</li>
+  <li>Like our <%= link_to "Facebook page", "http://facebook.com/investopresto", :target => :blank, :class => "button" %> and stand to win Inox Tickets.</li>
+  <li>Sign up to be a pilot user. Give us constructive feed back and stand to win 2011 Formula One India Tickets and more iPods.</li>
+</ol>
+
+<%= button_to "Start Step 1", @surveys[0], :method => :get %>
