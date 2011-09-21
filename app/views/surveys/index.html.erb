@@ -5,8 +5,8 @@
 
 <ol>
   <li>Simply tell us a bit about what features you will find useful by taking our short 2 minute survey click on the link below.[Stand to win iPods and Coffee day vouchers]</li>
-  <li>Like our <%= link_to "Facebook page", "http://facebook.com/investopresto", :target => :blank, :class => "button" %> and stand to win Inox Tickets.</li>
+  <li>Like our <%= link_to "Facebook page", "http://facebook.com/investopresto", :target => :blank %> and stand to win Inox Tickets.</li>
   <li>Sign up to be a pilot user. Give us constructive feed back and stand to win 2011 Formula One India Tickets and more iPods.</li>
 </ol>
 
-<%= button_to "Start Step 1", @surveys[0], :method => :get %>
+<%= button_to "Start Step 1", survey_path(:id => 1), :method => :get %>
