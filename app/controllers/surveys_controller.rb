@@ -91,6 +91,8 @@ class SurveysController < ApplicationController
       answer.content = value[:content]
       answer.save
     end
-    render :inline => Survey.find(params[:id]).result_html || "Saved your survey Successfully!", :layout => true
+
+    survey = Survey.find_by_id(params[:id].to_i + 1)
+    redirect_to survey ? survey_path(survey) : root_url, :notice => "Thank you! Your preference has been submitted!!"
   end
 end
