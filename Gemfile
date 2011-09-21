@@ -16,6 +16,10 @@ group :assets do
   gem 'uglifier'
 end
 
+gem 'activeadmin'
+  # required by activeadmin
+  gem 'sass-rails', "  ~> 3.1.0"
+  gem 'compass', '~> 0.12.alpha.0'
 gem 'haml'
 gem 'jquery-rails'
 gem 'omniauth'
