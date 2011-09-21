@@ -49,7 +49,28 @@ hgroup.logo .tag{
 {
   color: #F45363;
 }
+li.question {
+  margin-bottom: 1em;
+  textarea {
+    width: 80%;
+    height: 10em;
+  }
+}
+
 ol.choices
 {
   list-style: lower-alpha;
+  @include horizontal-list;
+}
+
+p.section_title {
+  margin: 2em 0 2em -2em;
+}
+
+.matrix {
+  display: table-row;
+  p, li.choice {
+    display: table-cell;
+    padding-left: 0.7em;
+  }
 }

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110921140507) do
+ActiveRecord::Schema.define(:version => 20110921140509) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -67,14 +67,24 @@ ActiveRecord::Schema.define(:version => 20110921140507) do
   add_index "choices", ["question_id"], :name => "index_choices_on_question_id"
 
   create_table "questions", :force => true do |t|
-    t.integer   "survey_id"
-    t.text      "content"
-    t.string    "type"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
+    t.integer  "section_id"
+    t.text     "content"
+    t.string   "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  add_index "questions", ["survey_id"], :name => "index_questions_on_survey_id"
+  add_index "questions", ["section_id"], :name => "index_questions_on_survey_id"
+
+  create_table "sections", :force => true do |t|
+    t.integer  "survey_id"
+    t.string   "title"
+    t.string   "style"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sections", ["survey_id"], :name => "index_sections_on_survey_id"
 
   create_table "surveys", :force => true do |t|
     t.string    "name"
