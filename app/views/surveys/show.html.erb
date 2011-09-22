@@ -5,7 +5,7 @@
 <%= form_tag answer_survey_path(@survey) do %>
   <ol class="questions">
     <%- for section in @survey.sections %>
-      <%= render (section.style.empty? ? 'default' : section.style), :section => section %>
+      <%= render section.style, :section => section %>
     <% end %>
   </ol>
   <div class="actions">

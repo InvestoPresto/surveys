@@ -8,7 +8,7 @@ ActiveAdmin.register Survey do
 
     f.has_many :sections do |s|
       s.input :title
-      s.input :style, :collection => %w(matrix)
+      s.input :style, :collection => %w(default matrix)
       s.has_many :questions do |q|
         q.input :content, :label => "Question"
         q.has_many :choices do |c|

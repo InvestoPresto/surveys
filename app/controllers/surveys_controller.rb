@@ -90,7 +90,7 @@ class SurveysController < ApplicationController
       answer = Answer.find_or_initialize_by_question_id_and_user_id(question_id, current_user.id)
       answer.content = value[:content]
       answer.save
-    end
+    end if params[:answers]
 
     survey = Survey.find_by_id(params[:id].to_i + 1)
     redirect_to survey ? survey_path(survey) : root_url, :notice => Survey.find(params[:id]).confirmation
