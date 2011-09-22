@@ -92,7 +92,7 @@ class SurveysController < ApplicationController
       answer.save
     end if params[:answers]
 
-    survey = Survey.find_by_id(params[:id].to_i + 1)
-    redirect_to survey ? survey_path(survey) : root_url, :notice => Survey.find(params[:id]).confirmation
+    survey = Survey.find(params[:id])
+    redirect_to survey.next_url || root_url, :notice => survey.confirmation
   end
 end

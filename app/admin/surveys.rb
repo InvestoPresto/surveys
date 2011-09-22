@@ -4,6 +4,7 @@ ActiveAdmin.register Survey do
       f.input :name
       f.input :description
       f.input :confirmation
+      f.input :next_url
     end
 
     f.has_many :sections do |s|
