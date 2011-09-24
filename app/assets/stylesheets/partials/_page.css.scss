@@ -30,11 +30,19 @@ body {
     @include container;
   }
   overflow: auto;
+  #wrapper {
+    padding: 1.5em;
+  }
+
   aside {
     @include column($aside-width);
+    section {
+      padding: 1em;
+    }
   }
   #main {
-    @include column($blueprint-liquid-grid-columns - $aside-width - 1, true);
+    @include column($blueprint-liquid-grid-columns - $aside-width - 2, true);
+    @include colborder;
   }
   header, footer {
     //@include column($blueprint-liquid-grid-columns - 1, true);

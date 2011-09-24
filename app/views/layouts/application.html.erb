@@ -45,6 +45,54 @@
 
     <%= yield %>
   </div>
+  <aside>
+    <section id="facebook">
+      <div id="fb-root"></div>
+      <script>
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) {return;}
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+      </script>
+      <div class="fb-like-box" data-href="http://www.facebook.com/investopresto" data-width="292" data-show-faces="true" data-stream="false" data-header="false"></div>
+    </section>
+    <section id="twitter">
+      <script src="http://widgets.twimg.com/j/2/widget.js"></script>
+      <script>
+        new TWTR.Widget({
+          version: 2,
+          type: 'profile',
+          rpp: 4,
+          interval: 30000,
+          width: 292,
+          height: 300,
+          theme: {
+            shell: {
+              background: '#f0f2f5',
+              color: '#3b5898'
+            },
+            tweets: {
+              background: '#ffffff',
+              color: '#0a0a0a',
+              links: '#050505'
+            }
+          },
+          features: {
+            scrollbar: false,
+            loop: false,
+            live: false,
+            hashtags: true,
+            timestamp: true,
+            avatars: false,
+            behavior: 'all'
+          }
+        }).render().setUser('investopresto').start();
+      </script>
+    </section>
+  </aside>
 </div>
 <footer>
   <div class="container">
