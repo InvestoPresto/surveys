@@ -63,10 +63,6 @@ ol.choices
   @include horizontal-list;
 }
 
-p.section_title {
-  margin: 2em 0 2em -2em;
-}
-
 .matrix {
   display: table-row;
   p, li.choice {
