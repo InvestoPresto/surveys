@@ -65,6 +65,12 @@ ol.choices
 
 .matrix {
   display: table-row;
+  li.choice {
+    white-space:nowrap;
+  }
+  p {
+    padding-bottom: 0.7em;
+  }
   p, li.choice {
     display: table-cell;
     padding-left: 0.7em;

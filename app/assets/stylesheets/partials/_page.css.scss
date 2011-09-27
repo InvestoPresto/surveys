@@ -35,15 +35,14 @@ body {
   }
 
   aside {
-    @include column($aside-width);
+    @include column($aside-width, true);
     section {
       padding: 1em;
     }
   }
   #main {
-    @include column($blueprint-liquid-grid-columns - $aside-width - 2, true);
+    @include column($blueprint-liquid-grid-columns - $aside-width - 2);
     @include colborder;
-    font-size: larger;
     .description {
       font-size: large;
     }
@@ -52,6 +51,4 @@ body {
     //@include column($blueprint-liquid-grid-columns - 1, true);
     background-color: $header-background-color;
   }
-
-  background: url(background.jpg) repeat;
 }
