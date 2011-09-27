@@ -43,6 +43,10 @@ body {
   #main {
     @include column($blueprint-liquid-grid-columns - $aside-width - 2, true);
     @include colborder;
+    font-size: larger;
+    .description {
+      font-size: large;
+    }
   }
   header, footer {
     //@include column($blueprint-liquid-grid-columns - 1, true);

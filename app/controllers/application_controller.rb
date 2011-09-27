@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authorize
-    redirect_to root_url, :notice => "Please login via Facebook/Google/Twitter/Yahoo using the buttons on the top right corner" unless current_user
+    redirect_to signin_path, :notice => "Please login via Facebook/Google/Twitter/Yahoo" unless current_user
   end
 
   def authorize_admin

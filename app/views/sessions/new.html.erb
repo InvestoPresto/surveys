@@ -1,0 +1,13 @@
+<h3>Click on one of the following buttons to login</h3>
+<%= link_to "/auth/facebook" do %>
+  <%= image_tag "https://github.com/intridea/authbuttons/raw/master/png/facebook_128.png", :alt => "Facebook" %>
+<%- end %>
+<%= link_to "/auth/google_apps" do %>
+  <%= image_tag "https://github.com/intridea/authbuttons/raw/master/png/google_128.png", :alt => "Google" %>
+<%- end %>
+<%= link_to "/auth/twitter" do %>
+  <%= image_tag "https://github.com/intridea/authbuttons/raw/master/png/twitter_128.png", :alt => "Twitter" %>
+<%- end %>
+<%= link_to "/auth/open_id?openid_url=yahoo.com" do %>
+  <%= image_tag "https://github.com/intridea/authbuttons/raw/master/png/yahoo_128.png", :alt => "Yahoo" %>
+<%- end %>
